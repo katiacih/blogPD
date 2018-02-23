@@ -1,4 +1,9 @@
-"""simplemooc URL Configuration
+"""Usando regex
+^ para o início do texto
+$ para o final do texto
+\d para um dígito
++ para indicar que o item anterior deve ser repetido pelo menos uma vez
+() para capturar parte do padrão
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.0/topics/http/urls/
@@ -15,8 +20,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import include
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    
+    path(r'', include('blog.urls')),
+
 ]
